@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:smart_meal/screens/login_screen.dart';
 
 import '../blocs/meal/home/meal_bloc.dart';
 import '../blocs/meal/home/meal_event.dart';
 import '../blocs/meal/home/meal_state.dart';
 import '../models/meal_model.dart';
 import 'custom_app_drawer.dart';
-import 'order_history_screen.dart';
 
 class WeeklyMealsScreen extends StatelessWidget {
   const WeeklyMealsScreen({super.key});
@@ -62,27 +60,7 @@ class _WeeklyMealsViewState extends State<WeeklyMealsView> {
             ),
           ],
         ),
-        endDrawer: CustomAppDrawer(
-          onWeeklyMealsPressed: () {
-            // Logic điều hướng đến trang món ăn trong tuần
-            Navigator.push(context, MaterialPageRoute(builder: (_) => WeeklyMealsScreen()));
-          },
-          onOrderHistoryPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (_) => OrderHistoryScreen()));
-          },
-          onStatisticsPressed: () {
-            // Logic điều hướng đến thống kê
-            // print('Điều hướng đến thống kê');
-          },
-          onLogoutPressed: () {
-            // Logic đăng xuất
-            // _performLogout();
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => LoginScreen()),
-            );
-          },
-        ),
+        endDrawer: CustomAppDrawer(),
         body: BlocListener<MealBloc, MealState>(
           listener: (context, state) {
             if (state is MealOrderSuccess) {

@@ -55,30 +55,7 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
             ),
           ],
         ),
-        endDrawer: CustomAppDrawer(
-          onWeeklyMealsPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const WeeklyMealsScreen()),
-            );
-          },
-          onOrderHistoryPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (_) => const OrderHistoryScreen()),
-            );
-          },
-          onStatisticsPressed: () {
-            // Logic điều hướng đến thống kê
-            // print('Điều hướng đến thống kê');
-          },
-          onLogoutPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const LoginScreen()),
-            );
-          },
-        ),
+        endDrawer: CustomAppDrawer(),
         body: Column(
           children: [
             // Header với icon lịch sử và tiêu đề
@@ -110,7 +87,7 @@ class _OrderHistoryScreenState extends State<OrderHistoryScreen> {
                 ],
               ),
             ),
-            Expanded(child: HistoryTable(orderHistory: orderHistory)),
+            HistoryTable(orderHistory: orderHistory),
             const SizedBox(height: 16),
           ],
         ),
@@ -126,7 +103,7 @@ class HistoryTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Expanded(
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 16.0),
         decoration: BoxDecoration(
