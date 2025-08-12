@@ -18,6 +18,9 @@ dependencies:
   flutter_bloc: ^9.1.1
   equatable: ^2.0.7
 
+  #Định dạng ngày giờ
+  intl: ^0.20.2
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
