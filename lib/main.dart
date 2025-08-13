@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:smart_meal/screens/home_screen.dart';
 import 'package:smart_meal/screens/login_screen.dart';
-import 'package:smart_meal/screens/register_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
       ),
       home: LoginScreen(),
       routes: {
-      //   '/home': (context) => HomeScreen(),
+        '/home': (context) => WeeklyMealsScreen(),
       //   '/forgot-password': (context) => ForgotPasswordScreen(),
-        '/create-account': (context) => RegisterScreen(),
+      //   '/create-account': (context) => CreateAccountScreen(),
       },
     );
   }
