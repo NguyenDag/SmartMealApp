@@ -31,13 +31,6 @@ class _LoginViewState extends State<LoginView> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   _usernameController.addListener(_onUsernameChanged);
-  //   _passwordController.addListener(_onPasswordChanged);
-  // }
-
   @override
   void dispose() {
     _usernameController.dispose();
@@ -45,7 +38,7 @@ class _LoginViewState extends State<LoginView> {
     super.dispose();
   }
 
-  void _onUsernameChanged() {
+  /*void _onUsernameChanged() {
     context.read<LoginBloc>().add(
       LoginUsernameChanged(_usernameController.text),
     );
@@ -55,7 +48,7 @@ class _LoginViewState extends State<LoginView> {
     context.read<LoginBloc>().add(
       LoginPasswordChanged(_passwordController.text),
     );
-  }
+  }*/
 
   void _onLoginButtonPressed() {
     context.read<LoginBloc>().add(
@@ -129,14 +122,12 @@ class _LoginViewState extends State<LoginView> {
       child: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-              'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            ),
+            image: AssetImage('assets/images/image_login.jpg'),
             fit: BoxFit.cover,
           ),
         ),
         child: Container(
-          color: Colors.black.withOpacity(0.3),
+          color: Colors.black26,
           child: SafeArea(
             child: Center(
               child: SingleChildScrollView(
@@ -146,11 +137,11 @@ class _LoginViewState extends State<LoginView> {
                     padding: const EdgeInsets.all(32.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(16.0),
+                      borderRadius: BorderRadius.circular(30),
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.black.withOpacity(0.1),
-                          blurRadius: 20,
+                          color: Colors.black12,
+                          blurRadius: 30,
                           offset: const Offset(0, 10),
                         ),
                       ],
@@ -165,9 +156,10 @@ class _LoginViewState extends State<LoginView> {
                             const Text(
                               'Xin chào!',
                               style: TextStyle(
-                                fontSize: 35,
+                                fontSize: 32,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black87,
+                                fontFamily: 'Roboto',
                               ),
                               textAlign: TextAlign.center,
                             ),
@@ -175,7 +167,7 @@ class _LoginViewState extends State<LoginView> {
                             const Text(
                               'Đăng nhập để tiếp tục',
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 13,
                                 color: Colors.black,
                               ),
                               textAlign: TextAlign.center,
@@ -231,7 +223,7 @@ class _LoginViewState extends State<LoginView> {
                                         ? null
                                         : _onLoginButtonPressed,
                                 style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.blue.shade600,
+                                  backgroundColor: const Color(0xFF00A1CD),
                                   foregroundColor: Colors.white,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8),
@@ -281,7 +273,7 @@ class _LoginViewState extends State<LoginView> {
 
                             // Create account button
                             FractionallySizedBox(
-                            widthFactor: 0.7,
+                              widthFactor: 0.7,
                               child: SizedBox(
                                 height: 50,
                                 width: MediaQuery.of(context).size.width * 0.5,

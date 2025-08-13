@@ -26,3 +26,18 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    # Load toàn bộ thư mục images
+    - assets/images/
+
+    # Hoặc load từng file cụ thể
+    #- assets/images/register_bg.jpg
+    #- assets/images/login_bg.png
+    #- assets/images/logo.png
+
+    # Load thư mục con
+    #- assets/images/icons/
+
+    # Load các file khác
+    #- assets/data/
