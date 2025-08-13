@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -159,7 +158,7 @@ class _RegisterViewState extends State<RegisterView> {
                                     child: Text(
                                       'Tạo tài khoản mới',
                                       style: TextStyle(
-                                        fontSize: 32,
+                                        fontSize: 28,
                                         fontWeight: FontWeight.bold,
                                         color: Color(0xFF00AD23),
                                       ),
@@ -227,7 +226,7 @@ class _RegisterViewState extends State<RegisterView> {
                                   // Register Button
                                   SizedBox(
                                     width: double.infinity,
-                                    height: 48,
+                                    height: 40,
                                     child: ElevatedButton(
                                       onPressed:
                                           state.status == RegisterStatus.loading
@@ -267,7 +266,7 @@ class _RegisterViewState extends State<RegisterView> {
                                               : const Text(
                                                 'Đăng ký',
                                                 style: TextStyle(
-                                                  fontSize: 16,
+                                                  fontSize: 14,
                                                   fontWeight: FontWeight.w600,
                                                 ),
                                               ),
@@ -307,19 +306,19 @@ class _RegisterViewState extends State<RegisterView> {
           onChanged: onChanged,
           decoration: InputDecoration(
             hintText: placeholder,
-            hintStyle: TextStyle(color: Colors.grey[500], fontSize: 16),
+            hintStyle: TextStyle(color: Colors.grey[500], fontSize: 12),
             filled: true,
             fillColor: Colors.grey[50],
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide(
-                color: errorText != null ? Colors.red : Colors.black!,
+                color: errorText != null ? Colors.red : Colors.black,
               ),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide(
-                color: errorText != null ? Colors.red : Colors.black!,
+                color: errorText != null ? Colors.red : Colors.black,
               ),
             ),
             focusedBorder: OutlineInputBorder(
@@ -330,8 +329,8 @@ class _RegisterViewState extends State<RegisterView> {
               ),
             ),
             contentPadding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 16,
+              horizontal: 12,
+              vertical: 6,
             ),
           ),
           style: const TextStyle(fontSize: 16, color: Colors.black87),

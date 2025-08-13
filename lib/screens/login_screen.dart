@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -7,7 +6,7 @@ import '../blocs/auth/login/login_event.dart';
 import '../blocs/auth/login/login_state.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,18 +36,6 @@ class _LoginViewState extends State<LoginView> {
     _passwordController.dispose();
     super.dispose();
   }
-
-  /*void _onUsernameChanged() {
-    context.read<LoginBloc>().add(
-      LoginUsernameChanged(_usernameController.text),
-    );
-  }
-
-  void _onPasswordChanged() {
-    context.read<LoginBloc>().add(
-      LoginPasswordChanged(_passwordController.text),
-    );
-  }*/
 
   void _onLoginButtonPressed() {
     context.read<LoginBloc>().add(
@@ -89,11 +76,11 @@ class _LoginViewState extends State<LoginView> {
             obscureText: isPassword,
             decoration: InputDecoration(
               hintText: placeholder,
-              hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 16),
+              hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 12),
               border: InputBorder.none,
               contentPadding: const EdgeInsets.symmetric(
-                horizontal: 16,
-                vertical: 16,
+                horizontal: 12,
+                vertical: 6,
               ),
             ),
           ),
@@ -216,7 +203,7 @@ class _LoginViewState extends State<LoginView> {
 
                             // Login button
                             SizedBox(
-                              height: 50,
+                              height: 40,
                               child: ElevatedButton(
                                 onPressed:
                                     state.status == LoginStatus.loading
@@ -246,7 +233,7 @@ class _LoginViewState extends State<LoginView> {
                                         : const Text(
                                           'Login',
                                           style: TextStyle(
-                                            fontSize: 16,
+                                            fontSize: 14,
                                             fontWeight: FontWeight.w600,
                                           ),
                                         ),
@@ -261,7 +248,7 @@ class _LoginViewState extends State<LoginView> {
                                 'Quên mật khẩu?',
                                 style: TextStyle(
                                   color: Colors.grey,
-                                  fontSize: 14,
+                                  fontSize: 12,
                                 ),
                               ),
                             ),
@@ -273,9 +260,9 @@ class _LoginViewState extends State<LoginView> {
 
                             // Create account button
                             FractionallySizedBox(
-                              widthFactor: 0.7,
+                              widthFactor: 0.82,
                               child: SizedBox(
-                                height: 50,
+                                height: 40,
                                 width: MediaQuery.of(context).size.width * 0.5,
                                 child: ElevatedButton(
                                   onPressed: _navigateToCreateAccount,
@@ -290,7 +277,7 @@ class _LoginViewState extends State<LoginView> {
                                   child: const Text(
                                     'Tạo tài khoản mới',
                                     style: TextStyle(
-                                      fontSize: 16,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w600,
                                     ),
                                   ),

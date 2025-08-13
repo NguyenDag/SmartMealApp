@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_meal/screens/statistic_screen.dart';
 
 import 'home_screen.dart';
 import 'login_screen.dart';
@@ -54,7 +55,14 @@ class CustomAppDrawer extends StatelessWidget {
                     icon: Icons.assessment,
                     iconColor: Colors.green,
                     title: 'Thống kê suất ăn',
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const StatisticScreen(),
+                        ),
+                      );
+                    },
                   ),
 
                   _buildMenuItem(

@@ -199,15 +199,32 @@ class MealCard extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.all(8),
+        padding: EdgeInsets.all(6),
         child: Row(
           children: [
             Expanded(
               flex: 1,
               child: Container(
-                height: 100,
+                height: 108,
                 decoration: BoxDecoration(color: Colors.orange[100]),
-                child: Icon(Icons.restaurant, size: 40, color: Colors.orange),
+                child:
+                    meal.imageUrl != null && meal.imageUrl.isNotEmpty
+                        ? Image.asset(
+                          meal.imageUrl,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) {
+                            return Icon(
+                              Icons.restaurant,
+                              size: 40,
+                              color: Colors.orange,
+                            ); // Hiển thị icon nếu ảnh không load được
+                          },
+                        )
+                        : Icon(
+                          Icons.restaurant,
+                          size: 40,
+                          color: Colors.orange,
+                        ),
               ),
             ),
             SizedBox(width: 8),
@@ -292,12 +309,16 @@ class MealCard extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: buttonColor,
           foregroundColor: Colors.white,
-          padding: EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.symmetric(horizontal: 2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        child: Text(buttonText, style: TextStyle(fontSize: 13)),
+        child: Text(
+          buttonText,
+          style: TextStyle(fontSize: 13),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
@@ -323,12 +344,16 @@ class MealCard extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           backgroundColor: buttonColor,
           foregroundColor: Colors.white,
-          padding: EdgeInsets.symmetric(horizontal: 12),
+          padding: EdgeInsets.symmetric(horizontal: 2),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        child: Text('Huỷ món', style: TextStyle(fontSize: 13)),
+        child: Text(
+          'Huỷ món',
+          style: TextStyle(fontSize: 13),
+          textAlign: TextAlign.center,
+        ),
       ),
     );
   }
