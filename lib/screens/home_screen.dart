@@ -208,7 +208,7 @@ class MealCard extends StatelessWidget {
                 height: 108,
                 decoration: BoxDecoration(color: Colors.orange[100]),
                 child:
-                    meal.imageUrl != null && meal.imageUrl.isNotEmpty
+                    meal.imageUrl.isNotEmpty
                         ? Image.asset(
                           meal.imageUrl,
                           fit: BoxFit.cover,

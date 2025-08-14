@@ -15,17 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Food App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'Roboto',
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue, fontFamily: 'Roboto'),
       home: LoginScreen(),
       routes: {
         '/home': (context) => WeeklyMealsScreen(),
-      //   '/forgot-password': (context) => ForgotPasswordScreen(),
+        //   '/forgot-password': (context) => ForgotPasswordScreen(),
         '/create-account': (context) => RegisterScreen(),
       },
     );
   }
 }
-
